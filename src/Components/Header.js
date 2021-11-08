@@ -1,66 +1,61 @@
-import React, { Component } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import Menu from "./svg/bars-solid.svg";
 import Close from "./svg/times-solid.svg";
 import CartIcon from "./svg/shopping-cart-solid.svg";
 import { Link } from "react-router-dom";
-import { DataContext } from "./Context";
+
 import "./css/Header.css";
 
-export class Header extends Component {
-  static contextType = DataContext;
+export const Header = () => {
+  const { cart } = useSelector((state) => state.products);
 
-  state = {
-    toggle: false,
+  const [toggle, setToggle] = React.useState(false);
+
+  const menuToggle = () => {
+    setToggle(!toggle);
   };
 
-  menuToggle = () => {
-    this.setState({ toggle: !this.state.toggle });
-  };
-
-  render() {
-    const { toggle } = this.state;
-    const { cart } = this.context;
-    return (
-      <header>
-        <div className="menu" onClick={this.menuToggle}>
-          <img src={Menu} alt="" width="20px" />
+  return (
+    <header>
+      <div className="menu" onClick={menuToggle}>
+        <img src={Menu} alt="" width="20px" />
+      </div>
+      <div className="logo">
+        <h1>
+          <Link to="/">Store</Link>
+        </h1>
+      </div>
+      <nav>
+        <ul className={toggle ? "toggle" : ""}>
+          <li>
+            <Link to="/">Trang chủ</Link>
+          </li>
+          <li>
+            <Link to="/product">Sản phẩm</Link>
+          </li>
+          <li>
+            <Link to="/contact">Liên hệ</Link>
+          </li>
+          <li>
+            <Link to="/about">Về chúng tôi</Link>
+          </li>
+          <li>
+            <Link to="/login">Đăng nhâp / Đăng ký</Link>
+          </li>
+          <li className="close" onClick={menuToggle}>
+            <img src={Close} alt="" width="20" />
+          </li>
+        </ul>
+        <div className="nav-cart">
+          <span>{cart.length}</span>
+          <Link to="/cart">
+            <img src={CartIcon} alt="" width="20" />
+          </Link>
         </div>
-        <div className="logo">
-          <h1>
-            <Link to="/">Nike</Link>
-          </h1>
-        </div>
-        <nav>
-          <ul className={toggle ? "toggle" : ""}>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/product">Product</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/login">Login/Register</Link>
-            </li>
-            <li className="close" onClick={this.menuToggle}>
-              <img src={Close} alt="" width="20" />
-            </li>
-          </ul>
-          <div className="nav-cart">
-            <span>{cart.length}</span>
-            <Link to="/cart">
-              <img src={CartIcon} alt="" width="20" />
-            </Link>
-          </div>
-        </nav>
-      </header>
-    );
-  }
-}
+      </nav>
+    </header>
+  );
+};
 
 export default Header;

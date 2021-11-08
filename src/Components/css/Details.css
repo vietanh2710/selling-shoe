@@ -1,50 +1,112 @@
-.details{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 50px 0;
+.details {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px auto;
 }
-.details img{
-    max-width: 500px;
-    min-width: 290px;
-    height: 300px;
-    display: block;
-    object-fit: cover;
-    margin: 25px;
+
+.details .wrapper-image img {
+  max-width: 500px;
+  min-width: 290px;
+  height: 455px;
+  display: block;
+  object-fit: cover;
+  margin: 5px;
 }
-.details .box{
-    max-width: 500px;
-    min-width: 290px;
-    margin: 25px;
+
+.wrapper-image {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
 }
-.box .row{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+
+.details .box {
+  min-width: 290px;
+  margin: 20px 25px 50px 25px;
+  width: 40%;
 }
-.box .row h2{
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+.box .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  align-items: center;
 }
-.box .row span{
-    color: crimson;
+
+.box .row h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
-.box .colors button{
-    width: 30px;
-    height: 30px;
-    border: 1px solid #333;
-    outline: none;
-    margin-right: 5px;
-    cursor: pointer;
+
+.box .row span {
+  color: #000;
 }
-.box p{
-    line-height: 1.5;
-    margin: 15px 0;
+
+.size-text {
+  text-transform: capitalize;
 }
-.box .cart{
-    background: #333;
-    color: white;
-    text-decoration: none;
-    padding: 10px 25px;
-    display: inline-block;
+
+.colors {
+  display: flex;
+  flex-direction: row;
+}
+
+.colors button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  box-shadow: rgb(229 229 229) 0px 0px 0px 1px;
+  outline: none;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.sizes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.sizes button {
+  box-shadow: rgb(229 229 229) 0px 0px 0px 1px;
+  border-radius: 4px;
+  background: transparent;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ant-btn {
+  text-transform: capitalize;
+}
+
+.ant-btn:hover,
+.ant-btn:focus {
+  color: #000 !important;
+}
+
+.ant-btn::after {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.box p {
+  line-height: 1.5;
+  margin: 15px 0;
+}
+
+.box .cart {
+  background: #000;
+  color: white;
+  text-decoration: none;
+  padding: 10px 25px;
+  display: inline-block;
+  height: 40px;
+  width: 50%;
+  text-align: center;
 }

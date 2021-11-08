@@ -5,47 +5,57 @@ header {
   align-items: center;
   overflow: hidden;
 }
+
 header .logo a {
   text-decoration: none;
   text-transform: uppercase;
   color: black;
 }
+
 header nav {
   display: flex;
 }
+
 nav ul li {
   list-style: none;
   display: inline-block;
 }
+
 nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
-  color: #555;
+  color: #231f20;
   padding: 0 15px;
 }
+
 nav ul li a:hover {
-  color: lightseagreen;
+  opacity: 0.5;
+  color: #231f20;
 }
+
 nav .nav-cart {
   cursor: pointer;
   position: relative;
 }
+
 nav .nav-cart span {
   position: absolute;
-  top: -12px;
-  right: -7px;
+  top: -13px;
+  right: -10px;
   background: crimson;
   font-size: 10px;
   color: white;
-  padding: 3px 5px;
+  padding: 3px 8px;
   border-radius: 50%;
   z-index: -1;
 }
+
 header .menu,
 header .close {
   cursor: pointer;
   display: none;
 }
+
 @media (max-width: 650px) {
   header ul {
     position: fixed;

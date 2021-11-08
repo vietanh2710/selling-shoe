@@ -1,23 +1,20 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./Components/Header";
 import Section from "./Components/Section";
-import { BrowserRouter as Router } from "react-router-dom";
-import { DataProvider } from "./Components/Context";
+import "antd/dist/antd.css";
+
 import "./App.css";
 
-class App extends React.Component {
-  render() {
-    return (
-      <DataProvider>
-        <div className="app">
-          <Router>
-            <Header />
-            <Section />
-          </Router>
-        </div>
-      </DataProvider>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="app">
+      <Router>
+        <Header />
+        <Section />
+      </Router>
+    </div>
+  );
+};
 
 export default App;
