@@ -55,7 +55,7 @@ export const Details = () => {
           <p>Size: </p>
           <Sizes
             sizes={detailProduct.sizes}
-            keyType={undefined}
+            keyType={detailProduct.type}
             setSize={setSize}
             width={undefined}
             sizeSelect={size}
