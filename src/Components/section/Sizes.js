@@ -6,12 +6,8 @@ import { SISE_SHOES_OTPIONS, SIZE_CLOTHES_OTPIONS } from "../../constants";
 export const Sizes = (props) => {
   const { sizes, setSize, width, sizeSelect, disable, keyType } = props;
 
-  console.log("props :>> ", props);
-
   const handleDisableBtn = (size) => {
     let isDisable = true;
-
-    console.log("sizes :>> ", sizes);
 
     for (let index = 0; index < sizes.length; index++) {
       if (sizes[index] === size) {

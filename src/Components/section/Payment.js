@@ -11,9 +11,7 @@ const Payment = () => {
   const { cart, total } = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
-  const onSubmit = React.useCallback(async (params) => {
-    console.log("params :>> ", params);
-  }, []);
+  const onSubmit = React.useCallback(async (params) => {}, []);
 
   if (cart.length === 0) return null;
 
